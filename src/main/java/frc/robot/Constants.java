@@ -21,6 +21,8 @@ public final class Constants {
     //The controller ports can be changed in driverstation
     public static final int driverXboxControllerPort = 0;
     public static final int operatorXboxControllerPort = 1;
+    public static final int k_TestMotorCANID = 1;
+    public static final double k_testMotorSpeed = 0.1;
 
     /* 
     Sets the maximum power we can drive at. 1.0 is 100%. 
