@@ -39,11 +39,6 @@ public class DriveSubsystem extends SubsystemBase {
     rightFollower.configFactoryDefault();
 
     // Tell motors to brake when not given any other command
-    leftLeader.setNeutralMode(NeutralMode.Brake);
-    rightLeader.setNeutralMode(NeutralMode.Brake);
-    leftFollower.setNeutralMode(NeutralMode.Brake);
-    rightFollower.setNeutralMode(NeutralMode.Brake);
-
     // Tell our drive command what type of drive we want to use and what motors to use
     drive = new DifferentialDrive(leftLeader, rightLeader);
 
@@ -53,19 +48,17 @@ public class DriveSubsystem extends SubsystemBase {
 
     // Set the left motors to inverted because they face the opposite direction of the right motors
     leftLeader.setInverted(true);
-    leftFollower.setInverted(true);
-    
     
   }
 
   // Create our drive command
   public void drive(double left, double right) {
     //Tell our drive command to act as a tank drive. Other valid option is Arcade drive
-    drive.tankDrive(left, right);
-    /*
-    readable log printed to roboRIO log accessable from VScode
+    drive.tankDrive(-left, right);
+    
+    //readable log printed to roboRIO log accessable from VScode
     System.out.println("left: "+ left+ ", right: "+ right);
-    */
+    
   }
 
   
